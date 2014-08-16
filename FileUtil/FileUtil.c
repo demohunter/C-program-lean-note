@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "FileUtil.h"
 
 
@@ -24,26 +25,21 @@ int main(int argc, char *argv[]) {
 		return 0;
 	}
 
-	if (help(argv[1]) == 0) {
+	if (argc == 2 && help(argv[1]) != 0) {
+		printf("参数错误 -h 查看使用方法\n");
+		return 0;
+	}
+
+	if (argc == 2 && help(argv[1]) == 0) {
 		printf("fileutil -r filename 获取文件内容\n");
 		printf("fileutil -w filename content 将content写入到filename\n");
 		return 0;
 	}
 
-
-	if (argc == 2 && argv[1] != "-h") {
-		printf("参数错误 -h 查看使用方法\n");
-		return 0;
-	}
-
-
-
-	printf("%s \n", argv[0]);
-
 	return 0;
 }
 
 int help(char *input) {
-	char *h = HELP;
+	char * h = HELP;
 	return strcmp(input, h);
 }

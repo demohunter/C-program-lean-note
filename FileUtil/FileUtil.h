@@ -8,8 +8,8 @@
 #ifndef FILEUTIL_H_
 #define FILEUTIL_H_
 
-#define  HELP '-h';
+#define  HELP "-h";
 
-int hello(char *input);
+int help(char *input);
 
 #endif /* FILEUTIL_H_ */
