@@ -1,6 +1,8 @@
 使用CDT开发
 
 常见错误
+
+
 1、warning-implicit-declaration-of-function-is-invalid-in-c99
 这个错误表示调用的函数没有在调用前声明
 
